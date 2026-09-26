@@ -18,6 +18,10 @@ htmlcov/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+build/
+dist/
+*.egg-info/
+.coverage
 
 # IDE
 .vscode/

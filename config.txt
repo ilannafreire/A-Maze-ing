@@ -1,0 +1,15 @@
+# Maze dimensions in cells.
+WIDTH=20
+HEIGHT=15
+
+# Entry and exit coordinates use x,y and start at 0,0.
+ENTRY=0,0
+EXIT=19,14
+
+# Output file and generation mode.
+OUTPUT_FILE=maze.txt
+PERFECT=False
+
+# Optional settings: bfs or backtracker; integer seed for reproducibility.
+ALGORITHM=backtracker
+SEED=42

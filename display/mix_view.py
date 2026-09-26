@@ -1,1 +1,0 @@
-# Opcional (MiniLibx)

@@ -1,1 +1,27 @@
-# Build do pacote mazegen-*
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mazegen-a-maze-ing"
+version = "1.0.0"
+description = "Reusable maze generation with BFS and depth-first backtracking"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE.md"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["build>=1.2", "flake8>=7", "mypy>=1.10", "pytest>=8"]
+
+[tool.setuptools]
+packages = ["mazegen"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.10"
+files = ["a_maze_ing.py", "display", "mazegen", "tests"]
+exclude = ["^build/", "^dist/", "^\\.venv/"]
