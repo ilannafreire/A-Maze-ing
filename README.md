@@ -68,9 +68,9 @@ notice.
 Both generation algorithms create a spanning tree over all usable cells.
 `bfs` uses a randomized breadth-first frontier; `backtracker` uses iterative
 depth-first search with backtracking. A seed makes either result reproducible.
-The breadth-first option is easy to inspect level by level, while the
-backtracker tends to produce longer winding corridors. The iterative
-backtracker also avoids recursion depth limits.
+The default is `backtracker`: its iterative depth-first traversal tends to make
+longer winding corridors and avoids recursion depth limits. `bfs` remains
+available as an alternative that is easy to inspect level by level.
 
 When `PERFECT=True`, the spanning tree is retained, so every pair of usable
 cells has exactly one route. In the default non-perfect mode, braiding is a
@@ -122,13 +122,22 @@ after the grid is changed.
 - Python packaging: https://packaging.python.org/
 - The project subject: `amazeing.pdf`
 
-AI tools were used to help interpret the subject, plan the implementation, and
-review code and tests. The project authors are responsible for understanding,
-testing, and reviewing all submitted work.
+AI assistance was used to interpret the subject, plan the generation and output
+modules, diagnose flake8 and mypy findings, review tests, and draft project
+documentation. The project authors are responsible for understanding, testing,
+and reviewing all submitted work.
 
 ## Team and Project Management
 
-- Team members and roles: replace this line with the actual names and roles.
+- Team members: Ilanna Freire (login: ifreire) and Daniel Assunção (login: dassunca).
+- Proposed responsibility split:
+	- Ilanna Freire: maze-generation engine, including grid and validation,
+		BFS/backtracker carving, braiding, the 42 pattern, the reusable generator
+		API, the shortest-path solver, and tests for generation rules.
+	- Daniel Assunção: application and delivery, including configuration and
+		CLI, terminal rendering and interactions, output-file serialization,
+		analyzer, packaging, and integration tests. Tests follow the area each
+		member owns.
 - Planning and changes during implementation: document the team's actual plan.
 - What worked well, what can improve, and tools used: complete this section
 	with the team's own retrospective before submission.

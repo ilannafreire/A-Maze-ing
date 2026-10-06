@@ -19,6 +19,16 @@ from mazegen.pattern import make_42_mask
 from mazegen.solver import find_shortest_path
 from mazegen.validation import validate_configuration
 
+__all__ = [
+    "EAST",
+    "MazeGenerationError",
+    "MazeGenerator",
+    "NORTH",
+    "SOUTH",
+    "WEST",
+    "Direction",
+]
+
 
 class MazeGenerator:
     """Generate a maze and expose its grid and shortest solution.

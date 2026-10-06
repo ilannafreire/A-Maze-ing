@@ -28,10 +28,12 @@ def find_shortest_path(
         if cell == exit:
             break
         x, y = cell
-        for neighbor, direction in neighbors(width, height, blocked, cell):
-            if grid[y][x] & direction[2] or neighbor in previous:
+        for neighbor, wall_direction in neighbors(
+            width, height, blocked, cell
+        ):
+            if grid[y][x] & wall_direction[2] or neighbor in previous:
                 continue
-            previous[neighbor] = (cell, direction[4])
+            previous[neighbor] = (cell, wall_direction[4])
             queue.append(neighbor)
     if exit not in previous:
         raise MazeGenerationError("No path connects entry and exit.")
