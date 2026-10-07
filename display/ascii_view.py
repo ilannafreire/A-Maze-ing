@@ -133,7 +133,7 @@ def render_maze(
                 label_color = "bright_yellow"
             else:
                 label = "   "
-                label_color = color
+                label_color = normalized_color
             middle.append(_paint(label, label_color, use_color))
         right = "|" if row[-1] & EAST else " "
         middle.append(_paint(right, normalized_color, use_color))

@@ -122,22 +122,31 @@ after the grid is changed.
 - Python packaging: https://packaging.python.org/
 - The project subject: `amazeing.pdf`
 
-AI assistance was used to interpret the subject, plan the generation and output
-modules, diagnose flake8 and mypy findings, review tests, and draft project
+AI assistance was used to diagnose flake8 and mypy findings, review tests, and draft project
 documentation. The project authors are responsible for understanding, testing,
 and reviewing all submitted work.
 
 ## Team and Project Management
 
 - Team members: Ilanna Freire (login: ifreire) and Daniel Assunção (login: dassunca).
-- Proposed responsibility split:
-	- Ilanna Freire: maze-generation engine, including grid and validation,
-		BFS/backtracker carving, braiding, the 42 pattern, the reusable generator
-		API, the shortest-path solver, and tests for generation rules.
-	- Daniel Assunção: application and delivery, including configuration and
-		CLI, terminal rendering and interactions, output-file serialization,
-		analyzer, packaging, and integration tests. Tests follow the area each
-		member owns.
-- Planning and changes during implementation: document the team's actual plan.
-- What worked well, what can improve, and tools used: complete this section
-	with the team's own retrospective before submission.
+- Roles and responsibilities were divided between the generation engine and
+	the application and delivery work:
+	- Ilanna Freire: grid operations and validation, BFS/backtracker carving,
+		braiding, the 42 pattern, the reusable generator API, shortest-path
+		solving, and tests for generation rules.
+	- Daniel Assunção: configuration parsing and CLI, terminal rendering and
+		interactions, output serialization, maze analysis, packaging, and
+		integration tests.
+- Planning and changes: the work was organized around two connected tracks:
+	building a reusable generation engine and integrating it into the terminal
+	application. The initial scope covered configuration, maze generation,
+	shortest-path output, and display. The delivered scope also includes two
+	generation algorithms, reproducible seeds, the 42 pattern, braided boards,
+	interactive path/color controls, an installable wheel, and automated checks.
+- Retrospective: separating generation from the CLI made the generator
+	importable and testable on its own. Fixed seeds, automated tests, and the
+	analyzer made maze behavior repeatable to check. Further improvements include
+	tests for interactive CLI flows and analyzer input errors, plus stricter type
+	checking of the test suite.
+- Tools used: Python 3, Make, pytest, flake8, mypy, setuptools/build, pip, Git,
+	the supplied `maze_analyzer.py`, and AI assistance for diagnosing checks, reviewing tests, and drafting docs.
